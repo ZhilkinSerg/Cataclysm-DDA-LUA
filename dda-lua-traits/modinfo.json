@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "ident": "dda-lua-traits",
+    "name": "Dark Days Ahead: Lua (Traits)",
+    "authors": [ "ZhilkinSerg" ],
+    "description": "New traits using LUA.",
+    "category": "content",
+    "dependencies": [ "dda", "dda-lua" ]
+  }
+]

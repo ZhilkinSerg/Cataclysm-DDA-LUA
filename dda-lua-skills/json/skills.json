@@ -1,0 +1,8 @@
+[
+  {
+      "type" : "skill",
+      "ident" : "athletics",
+      "name" : "athletics",
+      "description" : "Yout ability to move faster.  Skill increases overall speed."
+  }
+]

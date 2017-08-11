@@ -1,0 +1,29 @@
+[
+  {
+    "type" : "mutation",
+    "id" : "TOURETTE",
+    "name" : "Tourette Syndrom",
+    "points" : -5,
+    "description" : "Compulsive swearing can be uncontrollable and undesired by the person uttering the phrases.  Xanax can help control this.",
+    "starting_trait" : true,
+    "valid" : true
+  },
+  {
+    "type" : "mutation",
+    "id" : "NUDIST",
+    "name" : "Nudist",
+    "points" : 5,
+    "description" : "You receive boost of +2 to all attributes when naked.",
+    "starting_trait" : true,
+    "valid" : true
+  },
+  {
+    "type" : "mutation",
+    "id" : "NIGHTMARES",
+    "name" : "Nightmares",
+    "points" : -5,
+    "description" : "You see bad dreams.  Ambien can help control this anxiety.",
+    "starting_trait" : true,
+    "valid" : true
+  }
+]

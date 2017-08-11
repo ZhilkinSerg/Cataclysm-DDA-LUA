@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "ident": "dda-lua-skills",
+    "name": "Dark Days Ahead: Lua (Skills)",
+    "authors": [ "ZhilkinSerg" ],
+    "description": "New skills using LUA.",
+    "category": "content",
+    "dependencies": [ "dda", "dda-lua" ]
+  }
+]

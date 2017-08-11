@@ -1,0 +1,17 @@
+[
+  {
+    "type": "effect_type",
+    "id": "nude",
+    "name": ["Nude"],
+    "desc": ["You are feeling just good to be naked."],
+    "apply_message": "I am fully naked at last! So comfortable!",
+    "remove_message": "Damn clothes! I don't want to wear it!",
+    "rating": "good",
+    "base_mods": {
+      "str_mod": [2],
+      "dex_mod": [2],
+      "per_mod": [2],
+      "int_mod": [2]
+    }
+  }
+]
