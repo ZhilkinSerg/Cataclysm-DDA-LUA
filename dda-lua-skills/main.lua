@@ -153,8 +153,14 @@ MOD.Update = function()
 
   PARAM.save("squares_walked_total", squares_walked_total)
 
-  local squares_per_train = 100 --TODO: make this variable configurable or implement some smarter formula for `trained_amount`
+  local squares_per_train = 10 --TODO: make this variable configurable or implement some smarter formula for `trained_amount`
   local trained_amount = squares_walked_delta / squares_per_train
+
+  if (trained_amount > 0 and trained_amount < 1) then
+
+    trained_amount = 1
+
+  end
   MOD.PracticeSkill("athletics", trained_amount)
 
   LOG.message(MOD.id..".main.Update:END|%s|%s|%s", squares_walked_prev, squares_walked, squares_walked_delta)
