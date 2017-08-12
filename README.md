@@ -39,6 +39,12 @@ Mod that adds following traits:
 - `NIGHTMARES` - you see bad dreams when not under medication (`ambien`);
 - `NUDIST` - +2 to all attributes when naked.
 
+## dda-lua-fun
+
+Mod that adds following fun:
+
+- *not implemented yet*.
+
 # Todo list:
 
 ## dda-lua
@@ -78,3 +84,12 @@ Mod that adds following traits:
 - change `NUDIST` trait to affect morale;
 - change `NIGHTMARES` trait to affect morale after awake;
 - add more nightmare images to `NIGHTMARES` trait.
+- add `ALHOHOLIC` trait - Every time you find alcohol, your character has a % chance to automatically pick it up and start drinking - http://smf.cataclysmdda.com/index.php?topic=3310.msg300936#msg300936.
+- add `HYPOCHONDRIA` trait - Whenever physically injured or affected by Flu, Infection, Poison or Shroom sickness, character gains a -50 morale penalty until their condition improves to normal. - http://smf.cataclysmdda.com/index.php?topic=3310.msg302481#msg302481
+- add `DEAF` trait - http://smf.cataclysmdda.com/index.php?topic=3310.msg302708#msg302708
+- add `BLIND` trait
+
+## dda-lua-fun
+
+- implement selection of nationality on character selection screen or new player creation (American, British, German, French, Scottish, etc. Get starting items related to nationality (Germans get beer, Frenchies get baguettes French maid hats, Scotsmen get a bagpipe and a kilt, Norwegians start with viking stuff, etc.) - see http://smf.cataclysmdda.com/index.php?topic=3310.msg303300#msg303300;
+- rotting food and corpses create stench clouds that reduce morale. Wearing mouth protection reduces the effect. Perfume and incense can be used for an opposite effect - see http://smf.cataclysmdda.com/index.php?topic=3310.msg300514#msg300514.
