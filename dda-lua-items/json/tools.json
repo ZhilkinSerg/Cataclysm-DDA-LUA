@@ -1,0 +1,32 @@
+[
+  {
+    "id": "atomic_entity_scanner",
+    "type": "TOOL",
+    "name": "atomic entity scanner",
+    "description": "<color_ltgreen>`Find your way!`</color> with the Rivtech atomic entity scanner!  Its simple and robust atomic-age construction guarantees a service life of at least 10 million years.",
+    "weight": 10000,
+    "volume": 30,
+    "price": 1000000,
+    "bashing": 20,
+    "material": [ "plastic", "aluminum" ],
+    "symbol": "!",
+    "color": "red",
+    "use_action": "IUSE_DDA_LUA_ENTITY_SCANNER",
+    "flags": [ "RADIOACTIVE", "DURABLE_MELEE" ]
+  },
+  {
+    "id": "atomic_earthquake_generator",
+    "type": "TOOL",
+    "name": "atomic earthquake generator",
+    "description": "<color_ltred>`Shake it, baby!`</color> with Rivtech atomic earthquake generator!  Its simple and robust atomic-age construction guarantees a service life of at least 2 million years.",
+    "weight": 100000,
+    "volume": 300,
+    "price": 10000000,
+    "bashing": 50,
+    "material": [ "plastic", "steel" ],
+    "symbol": "X",
+    "color": "red",
+    "use_action": "IUSE_DDA_LUA_EARTHQUAKE_GENERATOR",
+    "flags": [ "RADIOACTIVE", "DURABLE_MELEE" ]
+  }
+]

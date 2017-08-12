@@ -16,7 +16,8 @@ Mod that adds following achievements:
 
 Mod that adds following items:
 
-- *not implemented yet*.
+- `atomic_entity_scanner` - highlights items and creatures around player character;
+- `atomic_earthquake_generator` - makes rubbles around player character.
 
 ## dda-lua-mapgen
 
@@ -56,8 +57,6 @@ Mod that adds following traits:
 ## dda-lua-items
 
 - rewrite code to make use of `dda-lua`;
-- implement `entity_scanner` - highlights items and creatures around player character (merge from http://smf.cataclysmdda.com/index.php?topic=14231.msg300388#msg300388);
-- implement `earthquake_generator` - makes rubbles around player character (merge from http://smf.cataclysmdda.com/index.php?topic=14231.msg300388#msg300388);
 - implement solar powered items;
 - implement ascii photo-gallery for camera.
 

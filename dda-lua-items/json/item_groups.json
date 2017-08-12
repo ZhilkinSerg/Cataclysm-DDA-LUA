@@ -1,0 +1,10 @@
+[   
+  {
+    "type" : "item_group",
+    "id" : "electronics",
+    "items":[
+      ["atomic_entity_scanner", 100],
+      ["atomic_earthquake_generator", 100]
+    ]
+  }
+]

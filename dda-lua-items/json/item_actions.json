@@ -1,0 +1,12 @@
+[
+  {
+      "type" : "item_action",
+      "id" : "IUSE_DDA_LUA_ENTITY_SCANNER",
+      "name" : "Use entity scanner"
+  },
+  {
+      "type" : "item_action",
+      "id" : "IUSE_DDA_LUA_EARTHQUAKE_GENERATOR",
+      "name" : "Use earthquake generator"
+  }
+]

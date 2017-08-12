@@ -5,6 +5,7 @@ DEBUG_ENABLED = false
 --[[ Unnamed requirements ]]--
 
 require("./data/mods/dda-lua/lua/functions")
+require("./data/mods/dda-lua/lua/temp")
 
 --[[ Named requirements ]]--
 

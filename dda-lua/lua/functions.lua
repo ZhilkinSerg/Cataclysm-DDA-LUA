@@ -1,3 +1,60 @@
+function spairs(t)
+
+  local keys = {}
+
+  for k in pairs(t) do
+
+    keys[#keys+1] = k
+
+  end
+
+  table.sort(keys)
+
+  local i = -1
+
+  return function()
+
+    i = i + 1
+
+    if keys[i] then
+
+      return keys[i], t[keys[i]]
+
+    end
+
+  end
+
+end
+
+function spairs_reverse(t, order)
+
+  local keys = {}
+
+  for k in pairs(t) do
+
+    keys[#keys+1] = k
+
+  end
+
+  table.sort(keys)
+
+  keys_reverse = table.reverse(keys)
+
+  local i = -1
+
+  return function()
+
+    i = i + 1
+
+    if keys_reverse[i] then
+
+      return keys_reverse[i], t[keys_reverse[i]]
+
+    end
+  end
+
+end
+
 function table.add (t, v)
 
   table.insert(t, v)
@@ -28,6 +85,17 @@ function table.random_value (t)
   end
   return choice 
  
+end
+
+function table.reverse(t)
+
+    local size = #t
+    local t_reversed = {}
+    for i,v in ipairs (t) do
+        t_reversed[size-i] = v
+    end
+    return t_reversed
+
 end
 
 file = {}
