@@ -12,6 +12,12 @@ Mod that adds following achievements:
 
 - *not implemented yet*.
 
+## dda-lua-fun
+
+Mod that adds following fun:
+
+- select character nationality on game start and receive several bonus items [suggested on the forums](http://smf.cataclysmdda.com/index.php?topic=3310.msg303300#msg303300).
+
 ## dda-lua-items
 
 Mod that adds following items:
@@ -60,6 +66,11 @@ Mod that adds following fun:
 - add achievements infrastructure to `dda-lua-achievements`;
 - add achievements (`squares_walked`, `cash`, `damage_taken`, `damage_healed`, `headshots`, `skill_level`, `attribute`, `recipes_known`, `get_naked`, `speed`).
 
+## dda-lua-fun
+
+- rewrite code to make use of `dda-lua`;
+- rotting food and corpses create stench clouds that reduce morale. Wearing mouth protection reduces the effect. Perfume and incense can be used for an opposite effect - see http://smf.cataclysmdda.com/index.php?topic=3310.msg300514#msg300514.
+
 ## dda-lua-items
 
 - rewrite code to make use of `dda-lua`;
@@ -88,8 +99,3 @@ Mod that adds following fun:
 - add `HYPOCHONDRIA` trait - Whenever physically injured or affected by Flu, Infection, Poison or Shroom sickness, character gains a -50 morale penalty until their condition improves to normal. - http://smf.cataclysmdda.com/index.php?topic=3310.msg302481#msg302481
 - add `DEAF` trait - http://smf.cataclysmdda.com/index.php?topic=3310.msg302708#msg302708
 - add `BLIND` trait
-
-## dda-lua-fun
-
-- implement selection of nationality on character selection screen or new player creation (American, British, German, French, Scottish, etc. Get starting items related to nationality (Germans get beer, Frenchies get baguettes French maid hats, Scotsmen get a bagpipe and a kilt, Norwegians start with viking stuff, etc.) - see http://smf.cataclysmdda.com/index.php?topic=3310.msg303300#msg303300;
-- rotting food and corpses create stench clouds that reduce morale. Wearing mouth protection reduces the effect. Perfume and incense can be used for an opposite effect - see http://smf.cataclysmdda.com/index.php?topic=3310.msg300514#msg300514.
