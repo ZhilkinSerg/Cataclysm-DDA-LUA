@@ -1,4 +1,8 @@
-local params = {}
+local params = {
+
+  prefix = "dda-lua"
+
+}
 
 params.init = function()
 
@@ -76,7 +80,7 @@ params.save = function(parameter_name, parameter_value, parameter_type)
 
   parameter_value = params.convert(parameter_value, "string") --passed to function `parameter_type` is ignored as we are always saving as string
 
-  player:set_value(MOD.id.."."..parameter_name, parameter_value)
+  player:set_value(params.prefix.."."..parameter_name, parameter_value)
 
   LOG.message("params.save:END|%s|%s|%s", parameter_name, parameter_type, parameter_value)
 
@@ -88,7 +92,7 @@ params.load = function (parameter_name, parameter_type)
 
   LOG.message("params.load:START|%s|%s", parameter_name, parameter_type)
 
-  local parameter_value = player:get_value(MOD.id.."."..parameter_name)
+  local parameter_value = player:get_value(params.prefix.."."..parameter_name)
 
   parameter_value = params.convert(parameter_value, parameter_type)
 
