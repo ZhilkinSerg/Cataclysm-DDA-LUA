@@ -2,7 +2,7 @@ require("./data/mods/dda-lua/init")
 
 --[[ Modification code ]]--
 
-MOD = {
+local MOD = {
 
  id = "dda-lua-skills"
 
