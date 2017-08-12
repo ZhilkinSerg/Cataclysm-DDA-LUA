@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "ident": "dda-lua-fun",
+    "name": "Dark Days Ahead: Fun",
+    "authors": [ "ZhilkinSerg" ],
+    "description": "New fun using LUA.",
+    "category": "content",
+    "dependencies": [ "dda", "dda-lua" ]
+  }
+]
