@@ -187,6 +187,8 @@ MOD.NightmaresTraitEffect = function()
 
       DISPLAY.popup_ascii(nightmare)
 
+      player:wake_up()
+
     end
 
   end
