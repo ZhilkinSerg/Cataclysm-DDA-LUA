@@ -35,7 +35,7 @@ Mod that adds following mapgen:
 
 Mod that adds following skills:
 
-- `athletics` - gives speed bonus based on `squares_walked`.
+- `athletics` - gives +2 base speed points per 1 skill level, based on `squares_walked` (practices by 1 skill point per 10 tiles traversed with at least 1 skill point).
 
 ## dda-lua-traits
 
@@ -46,12 +46,6 @@ Mod that adds following traits:
 - `NUDIST` - +2 to all attributes when naked;
 - `DEAFNESS` - you are totally deaf and cannot hear anything - [suggested on the forums](http://smf.cataclysmdda.com/index.php?topic=3310.msg302708#msg302708);
 - `BLINDNESS` - you are totally blind and cannot see anything.
-
-## dda-lua-fun
-
-Mod that adds following fun:
-
-- *not implemented yet*.
 
 # Todo list:
 
