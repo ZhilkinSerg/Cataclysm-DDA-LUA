@@ -47,13 +47,18 @@ display.popup_table = function (t)
   local popup_string = ""
 
   for _,v in pairs(t) do
-    popup_string = popup_string..v.."\n"
+    popup_string = popup_string..tostring(v).."\n"
   end
   
   game.popup(popup_string) -- 79x22 max
 
 end
 
+display.popup = function (s)
+  
+  game.popup(s) -- 79x22 max with \n on line end
+
+end
 display.message = function (message)
 
   print(message)

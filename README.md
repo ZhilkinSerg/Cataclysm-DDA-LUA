@@ -52,10 +52,11 @@ Mod that adds following traits:
 ## dda-lua
 
 - enhance capabilities (add `mapgen`, `menu`, `config`);
-- implement figlet/ascii intro;
+- update figlet/ascii intro;
 - implement global configuration menu;
 - optimize `figlet` data;
-- make profiling and optimize code.
+- make profiling and optimize code;
+- make use of `lifetime_stats` (see https://github.com/CleverRaven/Cataclysm-DDA/pull/21607).
 
 ## dda-lua-achievements
 

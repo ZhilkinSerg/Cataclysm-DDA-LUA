@@ -26,6 +26,22 @@ DISPLAY = display.init()
 PLAYER = functions_player.init()
 
 --[[
+--local intro_message = "dda-lua"
+--local intro_font = "standard"
+--DISPLAY.popup_figlet(intro_message, intro_font)
+]]--
+
+local intro_message = {
+
+  "You are running `dda` with `dda-lua` modification.",
+  "\n",
+  "DEBUG_ENABLED  variable is set to: "..tostring(DEBUG_ENABLED)..".",
+  "\n",
+  "If it is enabled you can check logs in `./dda-lua.log`."
+}
+DISPLAY.popup_table(intro_message) 
+
+--[[
 
 local skill_names = {
 
