@@ -71,7 +71,9 @@ Mod that adds following fun:
 ## dda-lua-fun
 
 - rewrite code to make use of `dda-lua`;
+- add more nationalities, review bonus items and quantities;
 - rotting food and corpses create stench clouds that reduce morale. Wearing mouth protection reduces the effect. Perfume and incense can be used for an opposite effect - see http://smf.cataclysmdda.com/index.php?topic=3310.msg300514#msg300514.
+- hygiene (you make filthier each turn and must wash/clean yourself with occassionally. filthy gear matters)
 
 ## dda-lua-items
 
