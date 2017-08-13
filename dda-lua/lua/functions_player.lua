@@ -1,4 +1,12 @@
-function player.add_item(item_id, item_quantity, container_id)
+local p = {}
+
+p.init = function()
+
+  return p
+
+end
+
+function p.add_item(item_id, item_quantity, container_id)
 
   item_quantity = math.floor(item_quantity)
   
@@ -56,3 +64,5 @@ function player.add_item(item_id, item_quantity, container_id)
   end
 
 end
+
+return p

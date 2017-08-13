@@ -6,7 +6,6 @@ DEBUG_ENABLED = false
 
 require("./data/mods/dda-lua/lua/const")
 require("./data/mods/dda-lua/lua/functions")
-require("./data/mods/dda-lua/lua/functions_player")
 require("./data/mods/dda-lua/lua/temp")
 
 --[[ Named requirements ]]--
@@ -16,6 +15,7 @@ log = require("./data/mods/dda-lua/lua/log")
 figlet = require("./data/mods/dda-lua/lua/figlet")
 display = require("./data/mods/dda-lua/lua/display")
 params = require("./data/mods/dda-lua/lua/params")
+functions_player = require("./data/mods/dda-lua/lua/functions_player")
 
 --[[ Globals initialization ]]--
 
@@ -23,6 +23,7 @@ LOG = log.init("./dda-lua.log", DEBUG_ENABLED or false, DEBUG_ENABLED or false)
 PARAM = params.init()
 FIGLET = figlet.init()
 DISPLAY = display.init()
+PLAYER = functions_player.init()
 
 --[[
 

@@ -258,7 +258,7 @@ MOD.Init = function()
     --DISPLAY.message("item_quantity:"..tostring(item_quantity))
     --DISPLAY.message("container_id:"..tostring(container_id))
    
-    player.add_item(item_id, item_quantity, container_id)
+    PLAYER.add_item(item_id, item_quantity, container_id)
 
   end
   
@@ -273,7 +273,7 @@ MOD.Init = function()
    DISPLAY.message("item_quantity:"..tostring(item_quantity))
    DISPLAY.message("container_id:"..tostring(container_id))
    
-   player.add_item(item_id, item_quantity, container_id)
+   PLAYER.add_item(item_id, item_quantity, container_id)
 
   end
   ]]
