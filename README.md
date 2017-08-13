@@ -55,6 +55,7 @@ Mod that adds following traits:
 - update figlet/ascii intro;
 - implement global configuration menu;
 - optimize `figlet` data;
+- optimize container handling in `function_players` data;
 - make profiling and optimize code;
 - make use of `lifetime_stats` (see https://github.com/CleverRaven/Cataclysm-DDA/pull/21607).
 

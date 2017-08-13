@@ -34,13 +34,14 @@ local NationalityMenu_Entries = { --TODO: make local!
             { "helmet_ball", 1 },
             { "helmet_ball", 1 },
             { "baseball", 1 },
-            { "pale_ale", 1, "bottle_glass" },
-            { "hamburger", 1 }
+            { "pale_ale", 1 },
+            { "hamburger", 1 },
+            { "cola", 1 }
           }
   },
   [1] = { "CANADIAN", 2,
           {
-           { "syrup", 1, "bottle_glass"},
+           { "syrup", 1 },
            { "mask_hockey", 1 },
            { "puck", 1 },
            { "hockey_stick", 1 },
@@ -50,11 +51,11 @@ local NationalityMenu_Entries = { --TODO: make local!
   [2] = { "SCOTSMAN", 2,
           {
             { "scots_cookbook", 1 },
-            { "whiskey", 1, "bottle_glass" },
+            { "whiskey", 1 },
             { "haggis", 1 },
             { "cloutie_dumpling", 1 },
             { "bagpipes", 1 },
-            { "brew_whiskey", 1, "bottle_glass" },
+            { "brew_whiskey", 1 },
             { "crossbow", 1 },
             { "cutlass", 1 },
             { "arming_sword", 1 },
@@ -73,8 +74,8 @@ local NationalityMenu_Entries = { --TODO: make local!
            { "hockey_stick", 1 },
            { "moonshine", 1 },
            { "shovel", 1 },
-           { "milk", 1, "bottle_plastic"},
-           { "vodka", 1, "bottle_glass" }
+           { "milk", 1 },
+           { "vodka", 1 }
           }
   },
   [4] = { "MEXICAN", 2,
@@ -86,7 +87,7 @@ local NationalityMenu_Entries = { --TODO: make local!
             { "tortilla_corn" , 1 },
             { "cornbread" , 1 },
             { "quesadilla_cheese" , 1 },
-            { "tequila" , 1, "bottle_glass" },
+            { "tequila" , 1 },
             { "hat_sombrero" , 1 },
             { "poncho" , 1 }
           }
@@ -95,27 +96,27 @@ local NationalityMenu_Entries = { --TODO: make local!
           {
             { "frenchtoast" , 1 },
             { "cheese_hard" , 1 },
-            { "wine_riesling" , 1, "bottle_glass" },
-            { "wine_chardonnay" , 1, "bottle_glass" },
-            { "wine_cabernet" , 1, "bottle_glass" },
-            { "wine_noir" , 1, "bottle_glass" }
+            { "wine_riesling" , 1 },
+            { "wine_chardonnay" , 1 },
+            { "wine_cabernet" , 1 },
+            { "wine_noir" , 1 }
           }
   },
   [6] = { "JAPANESE", 2, 
-  {
-          { "textbook_armeast", 1 },
-          { "tanto", 1 },
-          { "katana", 1 },
-          { "katana_fake", 1 },
-          { "firekatana_off", 1 },
-          { "helmet_kabuto", 1 },
-          { "armor_samurai", 1 },
-          { "sushi_rice", 1 },
-          { "sushi_veggyroll", 1 },
-          { "sushi_fishroll", 1 },
-          { "sushi_meatroll", 1 },
-          { "sushi_rice", 1 }
-  }
+          {
+            { "textbook_armeast", 1 },
+            { "tanto", 1 },
+            { "katana", 1 },
+            { "katana_fake", 1 },
+            { "firekatana_off", 1 },
+            { "helmet_kabuto", 1 },
+            { "armor_samurai", 1 },
+            { "sushi_rice", 1 },
+            { "sushi_veggyroll", 1 },
+            { "sushi_fishroll", 1 },
+            { "sushi_meatroll", 1 },
+            { "sushi_rice", 1 }
+          }
   },
   [7] = { "ZULU", 2, 
           {
@@ -225,12 +226,8 @@ function MOD.on_day_passed()
 
 end
 
-MOD.Init = function()
-
-  LOG.message(MOD.id..".main.Init:START")
-
-  --LOG.message ("Initialization logic goes here.")
-
+MOD.AddNationalityBonusItems = function ()
+  
   local nationality_id = Show_NationalityMenu()
   --DISPLAY.message("nationality_id:"..nationality_id)
   
@@ -277,6 +274,17 @@ MOD.Init = function()
 
   end
   ]]
+
+
+end
+
+MOD.Init = function()
+
+  LOG.message(MOD.id..".main.Init:START")
+
+  --LOG.message ("Initialization logic goes here.")
+
+  MOD.AddNationalityBonusItems()
 
   LOG.message(MOD.id..".main.Init:END")
 

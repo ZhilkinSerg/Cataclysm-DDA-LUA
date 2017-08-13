@@ -8,38 +8,39 @@ end
 
 function p.add_item(item_id, item_quantity, container_id)
 
-  item_quantity = math.floor(item_quantity)
-  
-  --local container
-
   if (item_quantity > 0) then
-    
-    local item = item(item_id, 1)
 
-	--[[
-    --local LIQUID = enums.phase_id[3]
+    item_quantity = math.floor(item_quantity)
+
     local LIQUID = enums.phase_id["LIQUID"]
-  
-    if (item.made_of(LIQUID) == true and container_id == nil) then
- 
-      local default_container_id = "bottle_plastic"   
-      container_id = default_container_id
-    
-      container = item(container_id, 1)
-    
-      if (container:is_container() == false) then
-    
-        container_id = default_container_id
-    
-      end
-    
+    local item_ref = item(item_id, 1)
+    local item_type = item_ref.type
+    local item_type_phase = item_type.phase
+    local item_default_container_id = item_type.default_container
+	
+	local cont = item(item_default_container_id, 1)
+	
+	--DISPLAY.message (tostring(cont:display_name()))
+	--DISPLAY.message (tostring(cont:tname()))
+	--DISPLAY.message (tostring(cont:type_name()))
+	--DISPLAY.message (tostring(cont:typeId()))
+
+    container_id = container_id or item_default_container_id
+
+    if (container_id == "can_drink") then -- TODO: bugged container
+      container_id = "bottle_plastic"
     end
-	]]
+
+    if (item_type_phase == LIQUID) then
+      container_id = nil
+    end
+
+	--DISPLAY.message("def:"..tostring(container_id))
     
-    if (container_id == nil) then
+    if (container_id == nil or item_default_container_id == "null") then
       
-      item = item(item_id, item_quantity)
-      player:i_add(item)
+      item_ref = item(item_id, item_quantity)
+      player:i_add(item_ref)
     
     else
 
@@ -47,11 +48,16 @@ function p.add_item(item_id, item_quantity, container_id)
 
       for i = 1, item_quantity do
 
-        item = item(item_id, 1)
-        container:fill_with(item)
-        
-        if (container:is_container_full() == true or i == item_quantity) then
+        item_ref = item(item_id, 1)
+        container:fill_with(item_ref)
 
+		--DISPLAY.message("rem-cap:"..tostring(container:get_remaining_capacity_for_liquid(item_ref, false)))
+		--DISPLAY.message("is_full:"..tostring(container:is_container_full()))
+		--DISPLAY.message("i:"..tostring(i))
+
+        if (container:get_remaining_capacity_for_liquid(item_ref, false) == 0 or container:is_container_full() or i == item_quantity) then
+
+          --player:i_add(item_ref)
           player:i_add(container)
           container = item(container_id, 1)
 
