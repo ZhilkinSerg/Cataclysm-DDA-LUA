@@ -4,7 +4,9 @@ DEBUG_ENABLED = false
 
 --[[ Unnamed requirements ]]--
 
+require("./data/mods/dda-lua/lua/const")
 require("./data/mods/dda-lua/lua/functions")
+require("./data/mods/dda-lua/lua/functions_player")
 require("./data/mods/dda-lua/lua/temp")
 
 --[[ Named requirements ]]--

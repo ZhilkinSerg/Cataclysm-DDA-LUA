@@ -116,7 +116,7 @@ function Show_EntityScanner_MenuMain()
   local choice = EntityScanner_MenuMain.selected
 
   if (choice == 0) then
-    DisplayMessage ("You switch off your scanner and put it back.")
+    display.message ("You switch off your scanner and put it back.")
   elseif (choice == 1) then
     Show_EntityScanner_MenuOptions()
   elseif (choice == 2) then
@@ -148,7 +148,7 @@ end
 
 function Show_EntityScanner_MenuScanItem()
 
-  DisplayMessage("<color_green>Started scanning for items...</color>")
+  display.message("<color_green>Started scanning for items...</color>")
 
   Create_EntityScanner_MenuScanItem()
 
@@ -181,16 +181,16 @@ function Show_EntityScanner_MenuScanItem()
 
   local choice = EntityScanner_MenuScanItem.selected
 
-  DisplayMessage("<color_green>Finished scanning for items...</color>")
+  display.message("<color_green>Finished scanning for items...</color>")
 
   if choice == 0 then
-    DisplayMessage ("You decided not to highlight items...")
+    display.message ("You decided not to highlight items...")
     Show_EntityScanner_MenuMain()
   elseif choice == 1 then
-    DisplayMessage ("You decided to highlight all items...")
+    display.message ("You decided to highlight all items...")
     EntityScanner_HighlightAllEntities(EntityScanner_MenuScanItemEntries)
   else
-    DisplayMessage ("You decided to highlight single item...")
+    display.message ("You decided to highlight single item...")
     EntityScanner_HighlightSingleEntity (choice, EntityScanner_MenuScanItemEntries)
   end
 
@@ -198,7 +198,7 @@ end
 
 function Show_EntityScanner_MenuScanMonster()
 
-  DisplayMessage("<color_green>Started scanning for monsters...</color>")
+  display.message("<color_green>Started scanning for monsters...</color>")
 
   Create_EntityScanner_MenuScanMonster()
 
@@ -222,16 +222,16 @@ function Show_EntityScanner_MenuScanMonster()
 
   local choice = EntityScanner_MenuScanMonster.selected
 
-  DisplayMessage("<color_green>Finished scanning for monsters...</color>")
+  display.message("<color_green>Finished scanning for monsters...</color>")
 
   if choice == 0 then
-    DisplayMessage ("You decided not to highlight monsters...")
+    display.message ("You decided not to highlight monsters...")
     Show_EntityScanner_MenuMain()
   elseif choice == 1 then
-    DisplayMessage ("You decided to highlight all monsters...")
+    display.message ("You decided to highlight all monsters...")
     EntityScanner_HighlightAllEntities(EntityScanner_MenuScanMonsterEntries)
   else
-    DisplayMessage ("You decided to highlight single monster...")
+    display.message ("You decided to highlight single monster...")
     EntityScanner_HighlightSingleEntity (choice, EntityScanner_MenuScanMonsterEntries)
   end
 
@@ -344,8 +344,8 @@ function EntityScanner_HighlightSingleEntity (choice, collection)
   local y2 = collection[choice][2]
   --local z2 = collection[choice][3]
 
-  DrawLine_Bresenham (x1, y1, x2, y2, GetValue_EntityScannerOptions("Highlight")) --only current Z-level
-  DrawLine_Bresenham (x1, y1, x2, y2, GetValue_EntityScannerOptions("Highlight")) --only current Z-level
+  DISPLAY.line_field (x1, y1, x2, y2, GetValue_EntityScannerOptions("Highlight")) --only current Z-level
+  DISPLAY.line_field (x1, y1, x2, y2, GetValue_EntityScannerOptions("Highlight")) --only current Z-level
 
 end
 
@@ -354,11 +354,11 @@ function EntityScanner_HighlightAllEntities(collection)
   local num_filter_items = 2 --TODO: make dynamic or check that entry is table in EntityScanner_HighlightSingleEntity?
   if (#collection > num_filter_items) then
     for i = num_filter_items + 1, #collection do
-      --DisplayMessage("i:"..i)
+      --display.message("i:"..i)
       EntityScanner_HighlightSingleEntity(i, collection)
     end
   else
-    DisplayMessage ("<color_ltred>Nothing to highlight!</color>")
+    display.message ("<color_ltred>Nothing to highlight!</color>")
   end
 
 end
@@ -407,7 +407,7 @@ function Show_EarthquakeGenerator_MenuMain()
   local choice = EarthquakeGenerator_MenuMain.selected
 
   if (choice == 0) then
-    DisplayMessage ("You switch off your earthquake generator and put it back.")
+    display.message ("You switch off your earthquake generator and put it back.")
   elseif (choice == 1) then
     Show_EarthquakeGenerator_MenuOptions()
   elseif (choice == 2) then
@@ -504,7 +504,7 @@ end
 
 function StartQuake()
 
-  DisplayMessage("<color_red>Artificial earthquake started!</color>")
+  display.message("<color_red>Artificial earthquake started!</color>")
 
   local QuakeRange = GetValue_EarthquakeGeneratorOptions ("QuakeRange", true)
 
@@ -564,7 +564,7 @@ function StartQuake()
     end
   end
 
-  DisplayMessage("<color_red>Artificial earthquake ended.</color>")
+  display.message("<color_red>Artificial earthquake ended.</color>")
 
 end
 
@@ -588,9 +588,9 @@ function iuse_dda_lua_item(item, active)
 
   local item_name = tostring(item:display_name())
 
-  --DisplayMessage("<color_white>Using item <color_cyan>"..item_name.."</color> in iuse_dda_lua_item function</color>")
+  --display.message("<color_white>Using item <color_cyan>"..item_name.."</color> in iuse_dda_lua_item function</color>")
   
-  --DisplayMessage(item:info())
+  --display.message(item:info())
 
   if (item_name == "atomic entity scanner") then
 
@@ -602,7 +602,7 @@ function iuse_dda_lua_item(item, active)
 
   else
 
-    DisplayMessage("<color_red>Unknown item in iuse_dda_lua_item function!</color>")
+    display.message("<color_red>Unknown item in iuse_dda_lua_item function!</color>")
 
   end
 
