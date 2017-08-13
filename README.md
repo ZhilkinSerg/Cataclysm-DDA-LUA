@@ -44,7 +44,8 @@ Mod that adds following traits:
 - `TOURETTE` - shouts bad words when not under medication (`xanax`);
 - `NIGHTMARES` - you see bad dreams when not under medication (`ambien`);
 - `NUDIST` - +2 to all attributes when naked;
-- `DEAFNESS` - you are totally deaf and cannot hear sounds - [suggested on the forums](http://smf.cataclysmdda.com/index.php?topic=3310.msg302708#msg302708).
+- `DEAFNESS` - you are totally deaf and cannot hear anything - [suggested on the forums](http://smf.cataclysmdda.com/index.php?topic=3310.msg302708#msg302708);
+- `BLINDNESS` - you are totally blind and cannot see anything.
 
 ## dda-lua-fun
 
@@ -97,5 +98,4 @@ Mod that adds following fun:
 - change `NIGHTMARES` trait to affect morale after awake;
 - add more nightmare images to `NIGHTMARES` trait;
 - add `ALHOHOLIC` trait - Every time you find alcohol, your character has a % chance to automatically pick it up and start drinking - http://smf.cataclysmdda.com/index.php?topic=3310.msg300936#msg300936;
-- add `HYPOCHONDRIA` trait - Whenever physically injured or affected by Flu, Infection, Poison or Shroom sickness, character gains a -50 morale penalty until their condition improves to normal - http://smf.cataclysmdda.com/index.php?topic=3310.msg302481#msg302481;
-- add `BLIND` trait.
+- add `HYPOCHONDRIA` trait - Whenever physically injured or affected by Flu, Infection, Poison or Shroom sickness, character gains a -50 morale penalty until their condition improves to normal - http://smf.cataclysmdda.com/index.php?topic=3310.msg302481#msg302481.

@@ -34,5 +34,14 @@
     "description" : "You are totally deaf and cannot hear sounds.",
     "starting_trait" : true,
     "valid" : true
+  },
+  {
+    "type" : "mutation",
+    "id" : "BLINDNESS",
+    "name" : "Blind",
+    "points" : -20,
+    "description" : "You are totally blind and cannot see anything.",
+    "starting_trait" : true,
+    "valid" : true
   }
 ]
