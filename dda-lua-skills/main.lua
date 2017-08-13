@@ -5,7 +5,7 @@ require("./data/mods/dda-lua/init")
 local MOD = {
 
   id = "dda-lua-skills",
-  version = "2017-08-11"
+  version = "2017-08-13"
 
 }
 
@@ -161,9 +161,12 @@ MOD.Update = function()
     trained_amount = 1
 
   end
+
+  trained_amount = math.floor(trained_amount)
+
   MOD.PracticeSkill("athletics", trained_amount)
 
-  LOG.message(MOD.id..".main.Update:END|%s|%s|%s", squares_walked_prev, squares_walked, squares_walked_delta)
+  LOG.message(MOD.id..".main.Update:END|%s|%s|%s|%s", squares_walked_prev, squares_walked, squares_walked_delta, trained_amount)
 
 end
 
