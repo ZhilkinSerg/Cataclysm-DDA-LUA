@@ -25,5 +25,14 @@
     "description" : "You see bad dreams.  Ambien can help control this anxiety.",
     "starting_trait" : true,
     "valid" : true
+  },
+  {
+    "type" : "mutation",
+    "id" : "DEAFNESS",
+    "name" : "Deaf",
+    "points" : -5,
+    "description" : "You are totally deaf and cannot hear sounds.",
+    "starting_trait" : true,
+    "valid" : true
   }
 ]

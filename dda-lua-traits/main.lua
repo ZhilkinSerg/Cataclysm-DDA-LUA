@@ -197,6 +197,22 @@ MOD.NightmaresTraitEffect = function()
 
 end
 
+MOD.DeafnessTraitEffect = function()
+
+  LOG.message(MOD.id..".main.MOD.DeafnessTraitEffect:START")
+
+  local is_deaf = player:has_effect(efftype_id("deaf"))
+
+  if (is_deaf == false) then
+  
+    player:add_effect(efftype_id("deaf"), 100, "num_bp", true, 3)
+
+  end
+
+  LOG.message(MOD.id..".main.MOD.DeafnessTraitEffect:END")
+
+end
+
 MOD.Init = function()
 
   LOG.message(MOD.id..".main.MOD.Init:START")
@@ -211,7 +227,8 @@ MOD.Traits = {
 
   TOURETTE = MOD.TouretteTraitEffect,
   NUDIST = MOD.NudistTraitEffect,
-  NIGHTMARES = MOD.NightmaresTraitEffect
+  NIGHTMARES = MOD.NightmaresTraitEffect,
+  DEAFNESS = MOD.DeafnessTraitEffect
   
 }
   
