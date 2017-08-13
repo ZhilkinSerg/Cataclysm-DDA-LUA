@@ -5,7 +5,7 @@ require("./data/mods/dda-lua/init")
 local MOD = {
 
   id = "dda-lua-fun",
-  version = "2017-08-12"
+  version = "2017-08-13"
 
 }
 
