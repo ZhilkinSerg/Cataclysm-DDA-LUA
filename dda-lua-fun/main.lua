@@ -232,19 +232,19 @@ MOD.Init = function()
   --LOG.message ("Initialization logic goes here.")
 
   local nationality_id = Show_NationalityMenu()
-  --DisplayMessage("nationality_id:"..nationality_id)
+  --DISPLAY.message("nationality_id:"..nationality_id)
   
   local nationality_record = NationalityMenu_Entries[nationality_id]
-  --DisplayMessage("nationality_record:"..tostring(nationality_record))
+  --DISPLAY.message("nationality_record:"..tostring(nationality_record))
 
   local nationality = nationality_record[1]
-  --DisplayMessage("nationality:"..tostring(nationality))
+  --DISPLAY.message("nationality:"..tostring(nationality))
 
   local bonus_quantity = nationality_record[2]
-  --DisplayMessage("bonus_quantity:"..tostring(bonus_quantity))
+  --DISPLAY.message("bonus_quantity:"..tostring(bonus_quantity))
 
   local bonus_items = nationality_record[3]
-  --DisplayMessage("#bonus_items:"..tostring(#bonus_items))
+  --DISPLAY.message("#bonus_items:"..tostring(#bonus_items))
 
 
   for _= 1, bonus_quantity  do
@@ -254,11 +254,11 @@ MOD.Init = function()
     local item_quantity = bonus[2]
     local container_id = bonus[3]
 
-    --DisplayMessage("item_id:"..tostring(item_id))
-    --DisplayMessage("item_quantity:"..tostring(item_quantity))
-    --DisplayMessage("container_id:"..tostring(container_id))
+    --DISPLAY.message("item_id:"..tostring(item_id))
+    --DISPLAY.message("item_quantity:"..tostring(item_quantity))
+    --DISPLAY.message("container_id:"..tostring(container_id))
    
-    AddItemToPlayerInventoryGeneric(item_id, item_quantity, container_id)
+    player.add_item(item_id, item_quantity, container_id)
 
   end
   
@@ -269,11 +269,11 @@ MOD.Init = function()
    local item_quantity = bonus[2]
    local container_id = bonus[3]
 
-   DisplayMessage("item_id:"..tostring(item_id))
-   DisplayMessage("item_quantity:"..tostring(item_quantity))
-   DisplayMessage("container_id:"..tostring(container_id))
+   DISPLAY.message("item_id:"..tostring(item_id))
+   DISPLAY.message("item_quantity:"..tostring(item_quantity))
+   DISPLAY.message("container_id:"..tostring(container_id))
    
-   AddItemToPlayerInventoryGeneric(item_id, item_quantity, container_id)
+   player.add_item(item_id, item_quantity, container_id)
 
   end
   ]]
