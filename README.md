@@ -23,7 +23,8 @@ Mod that adds following fun:
 Mod that adds following items:
 
 - `atomic_entity_scanner` - highlights items and creatures around player character;
-- `atomic_earthquake_generator` - makes rubbles around player character.
+- `atomic_earthquake_generator` - makes rubbles around player character;
+- `atomic_flamethrower` - bursts fire in selected direction.
 
 ## dda-lua-mapgen
 
