@@ -8,5 +8,10 @@
       "type" : "item_action",
       "id" : "IUSE_DDA_LUA_EARTHQUAKE_GENERATOR",
       "name" : "Use earthquake generator"
+  },
+  {
+      "type": "item_action",
+      "id": "IUSE_DDA_LUA_FLAMETHROWER",
+      "name": "<color_red>BURN!!!</color>"
   }
 ]

@@ -608,6 +608,94 @@ function iuse_dda_lua_item(item, active)
 
 end
 
+function plot_field (x, y, fd)
+
+  map:add_field(tripoint(x,y,player:pos().z), fd, 1, 0)
+  
+end
+
+function line_field (x1, y1, x2, y2, fd)
+
+  local delta_x = x2 - x1
+  local ix = delta_x > 0 and 1 or -1
+  delta_x = 2 * math.abs(delta_x)
+
+  local delta_y = y2 - y1
+  local iy = delta_y > 0 and 1 or -1
+  delta_y = 2 * math.abs(delta_y)
+
+  plot_field(x1, y1, fd)
+
+  if delta_x >= delta_y then
+    error = delta_y - delta_x / 2
+
+    while x1 ~= x2 do
+      if (error >= 0) and ((error ~= 0) or (ix > 0)) then
+        error = error - delta_x
+        y1 = y1 + iy
+      end
+
+      error = error + delta_y
+      x1 = x1 + ix
+
+      plot_field(x1, y1, fd)
+    end
+  else
+    error = delta_x - delta_y / 2
+
+    while y1 ~= y2 do
+      if (error >= 0) and ((error ~= 0) or (iy > 0)) then
+        error = error - delta_y
+        x1 = x1 + ix
+      end
+
+      error = error + delta_x
+      y1 = y1 + iy
+
+      plot_field(x1, y1, fd)
+    end
+  end
+end
+
+function get_directions(p1, p2)
+
+	return (p2.x-p1.x), (p2.y-p1.y)
+
+end
+
+function flamethrower(item, active) --Adjacent direction
+
+	local burst_cone_min_length = 0
+	local burst_cone_max_length = 12
+	local burst_cone_width = math.random(3, 12)
+
+	--game.add_msg(tostring(burst_cone_width))
+
+	local burst_field = "fd_fire"
+
+    local center = player:pos()
+    local selected_x, selected_y = game.choose_adjacent("Select direction to <color_red>burn</color>", center.x, center.y)
+    local selected_point = tripoint(selected_x, selected_y, center.z)
+	local selected_direction_x,selected_direction_y = get_directions(center, selected_point)
+
+	local start_point = tripoint(selected_point.x + selected_direction_x * burst_cone_min_length, selected_point.y + selected_direction_y * burst_cone_min_length, selected_point.z)
+	local end_point = tripoint(selected_point.x + selected_direction_x * burst_cone_max_length, selected_point.y + selected_direction_y * burst_cone_max_length, selected_point.z)
+
+	for w = -burst_cone_width/2, burst_cone_width/2 do
+		local temp_end_point1 = tripoint(end_point.x + w, end_point.y + w, end_point.z)
+		local temp_end_point2 = tripoint(end_point.x + w, end_point.y + selected_direction_y * w, end_point.z)
+		local temp_end_point3 = tripoint(end_point.x + selected_direction_x * w, end_point.y + w, end_point.z)
+		local temp_end_point4 = tripoint(end_point.x + selected_direction_x * w, end_point.y + selected_direction_y * w, end_point.z)
+		line_field(start_point.x, start_point.y, temp_end_point1.x, temp_end_point1.y, burst_field)
+		line_field(start_point.x, start_point.y, temp_end_point2.x, temp_end_point2.y, burst_field)
+		line_field(start_point.x, start_point.y, temp_end_point3.x, temp_end_point3.y, burst_field)
+		line_field(start_point.x, start_point.y, temp_end_point4.x, temp_end_point4.y, burst_field)
+	end
+
+	--game.add_msg("<color_red>BURN!!!</color>")
+
+end
+
 function on_preload()
 
   LOG.message(MOD.id..".preload.on_preload:START")
@@ -617,6 +705,8 @@ function on_preload()
   
   --game.register_iuse("IUSE_DDA_LUA_ENTITY_SCANNER", iuse_dda_lua_item_entity_scanner)
   --game.register_iuse("IUSE_DDA_LUA_EARTHQUAKE_GENERATOR", iuse_dda_lua_item_earthquake_generator)
+  
+  game.register_iuse("IUSE_DDA_LUA_FLAMETHROWER", flamethrower)
 
   LOG.message(MOD.id..".preload.on_preload:END")
 

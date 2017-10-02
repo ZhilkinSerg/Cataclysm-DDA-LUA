@@ -28,5 +28,20 @@
     "color": "red",
     "use_action": "IUSE_DDA_LUA_EARTHQUAKE_GENERATOR",
     "flags": [ "RADIOACTIVE", "DURABLE_MELEE" ]
+  },
+  {
+    "id": "atomic_flamethrower",
+    "type": "TOOL",
+    "name": "atomic flamethrower",
+    "description": "<color_ltred>`Burn it, baby!`</color> with Rivtech atomic flaemthrower!  Its simple and robust atomic-age construction guarantees a service life of at least 2 million years.",
+    "weight": 10000,
+    "volume": 100,
+    "price": 1000000,
+    "bashing": 20,
+    "material": [ "plastic", "steel" ],
+    "symbol": "F",
+    "color": "red",
+    "use_action": "IUSE_DDA_LUA_FLAMETHROWER",
+    "flags": [ "RADIOACTIVE", "DURABLE_MELEE" ]
   }
 ]
