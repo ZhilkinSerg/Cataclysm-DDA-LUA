@@ -39,7 +39,7 @@
     "type" : "mutation",
     "id" : "BLINDNESS",
     "name" : "Blind",
-    "points" : -20,
+    "points" : -10,
     "description" : "You are totally blind and cannot see anything.",
     "starting_trait" : true,
     "valid" : true
