@@ -205,7 +205,7 @@ MOD.DeafnessTraitEffect = function()
 
   if (is_deaf == false) then
   
-    player:add_effect(efftype_id("deaf"), 100, "num_bp", true, 3)
+    player:add_effect(efftype_id("deaf"), 100, "bp_head", true, 3)
 
   end
 
@@ -221,7 +221,7 @@ MOD.BlindnessTraitEffect = function()
 
   if (is_blind == false) then
   
-    player:add_effect(efftype_id("blind"), 100, "num_bp", true, 1)
+    player:add_effect(efftype_id("blind"), 100, "bp_eyes", true, 1)
 
   end
 
