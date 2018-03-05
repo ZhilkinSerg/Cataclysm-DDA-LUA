@@ -156,23 +156,24 @@ function Show_EntityScanner_MenuScanItem()
 
   local center = player:pos()
 
-  for x = -ScanRadius, ScanRadius do
-    for y = -ScanRadius, ScanRadius do
-      local z = 0 --only current Z-level
-
-      local point = tripoint (center.x + x, center.y + y, center.z + z)
-      local distance = game.trig_dist(point.x, point.y, center.x, center.y)
-
-      if (distance <= ScanRadius) then
-        if map:i_at(point):size() > 0 then
-          local item_stack_iterator =  map:i_at(point):cppbegin()
-          for _ = 1, map:i_at(point):size() do
-            AddEntry_EntityScanner_MenuScanItem(item_stack_iterator:elem(), point.x, point.y, point.z)
-            item_stack_iterator:inc()
+  for off = 1, ScanRadius do
+    for x = -off, off do
+      for y = -off, off do
+        local z = 0 --only current Z-level
+        if math.abs(x) == off or math.abs(y) == off then
+          local point = tripoint(center.x + x, center.y + y, center.z + z)
+          local distance = game.trig_dist(point.x, point.y, center.x, center.y)
+          if (distance <= ScanRadius) then
+            if map:i_at(point):size() > 0 then
+              local item_stack_iterator =  map:i_at(point):cppbegin()
+              for _ = 1, map:i_at(point):size() do
+                AddEntry_EntityScanner_MenuScanItem(item_stack_iterator:elem(), point.x, point.y, point.z)
+                item_stack_iterator:inc()
+              end
+            end
           end
         end
       end
-
     end
   end
 
@@ -206,14 +207,21 @@ function Show_EntityScanner_MenuScanMonster()
 
   local center = player:pos()
 
-  local n_max = g:num_zombies()
-  for n = 0, (n_max - 1) do
-    local monster = g:zombie(n)
-    local point = monster:pos()
-    local distance = game.trig_dist(point.x, point.y, center.x, center.y)
-
-    if (distance <= ScanRadius) then
-      AddEntry_EntityScanner_MenuScanMonster(monster, point.x, point.y, point.z)
+  for off = 1, ScanRadius do
+    for x = -off, off do
+      for y = -off, off do
+        local z = 0 --only current Z-level
+        if math.abs(x) == off or math.abs(y) == off then
+          local point = tripoint(center.x + x, center.y + y, center.z + z)
+          local distance = game.trig_dist(point.x, point.y, center.x, center.y)
+          if (distance <= ScanRadius) then
+            local monster = g:critter_at(point)
+            if monster then
+              AddEntry_EntityScanner_MenuScanMonster(monster, point.x, point.y, point.z)
+            end
+          end
+        end
+      end
     end
   end
 
@@ -311,8 +319,7 @@ function AddEntry_EntityScanner_MenuScanItem(entity, x, y, z)
   if (string.match(item:display_name(), GetValue_EntityScannerOptions("SearchMask")) ~= nil) then
 
     EntityScanner_MenuScanItemEntries [#EntityScanner_MenuScanItemEntries+1] = { [0] = item:display_name(), [1] = x, [2] = y, [3] = z }
-
-    local menu_entry = string.format("Item: %s [W:<color_white>%d</color>, V:<color_white>%d</color>] at [X:<color_white>%d</color>, Y:<color_white>%d</color>, Z:<color_white>%d</color>]", item:display_name(), item.type.weight, item.type.volume:value(), x, y, z)
+    local menu_entry = string.format("Item: %s [W:<color_white>%d</color>, V:<color_white>%d</color>] at [X:<color_white>%d</color>, Y:<color_white>%d</color>, Z:<color_white>%d</color>]", item:display_name(), item.type.weight:value(), item.type.volume:value(), x, y, z)
     EntityScanner_MenuScanItem:addentry(menu_entry)
 
   end
