@@ -111,7 +111,7 @@ end
 
 display.plot_field = function (x, y, fd)
 
-  map:add_field(tripoint(x,y,player:pos().z), fd, 1, 0)
+  map:add_field(tripoint(x,y,player:pos().z), fd, 1, TURNS(0))
   
 end
 

@@ -561,9 +561,9 @@ function StartQuake()
         if game.one_in(2) then
           --nothing
         elseif game.one_in(5) then
-          map:add_field(point, "fd_smoke", 2, 0)
+          map:add_field(point, "fd_smoke", 2, TURNS(0))
         elseif game.one_in(20) then
-          --map:add_field(point, "fd_fire", 2, 0)
+          --map:add_field(point, "fd_fire", 2, TURNS(0))
         end
 
       end
@@ -617,7 +617,7 @@ end
 
 function plot_field (x, y, fd)
 
-  map:add_field(tripoint(x,y,player:pos().z), fd, 1, 0)
+  map:add_field(tripoint(x,y,player:pos().z), fd, 1, TURNS(0))
   
 end
 
