@@ -109,7 +109,7 @@ MOD.NudistTraitEffect = function()
   LOG.message(MOD.id..".main.MOD.NudistTraitEffect:START")
 
   local nude_effect = efftype_id("nude")
-  local nude_effect_duration = 3600000 -- TODO: make this variable configurable
+  local nude_effect_duration = TURNS(3600000) -- TODO: make this variable configurable
 
   local is_naked = true
 
@@ -201,11 +201,15 @@ MOD.DeafnessTraitEffect = function()
 
   LOG.message(MOD.id..".main.MOD.DeafnessTraitEffect:START")
 
-  local is_deaf = player:has_effect(efftype_id("deaf"))
+  local deaf_effect = efftype_id("deaf")
+  local deaf_effect_duration = TURNS(3600000) -- TODO: make this variable configurable
+  local deaf_effect_body_part = "bp_head"
+  local deaf_effect_intensity = 3
+  local is_deaf = player:has_effect(deaf_effect)
 
   if (is_deaf == false) then
   
-    player:add_effect(efftype_id("deaf"), 100, "bp_head", true, 3)
+    player:add_effect(deaf_effect, deaf_effect_duration, deaf_effect_body_part, true, deaf_effect_intensity)
 
   end
 
@@ -217,11 +221,15 @@ MOD.BlindnessTraitEffect = function()
 
   LOG.message(MOD.id..".main.MOD.BlindnessTraitEffect:START")
 
-  local is_blind = player:has_effect(efftype_id("blind"))
+  local blind_effect = efftype_id("blind")
+  local blind_effect_duration = TURNS(3600000) -- TODO: make this variable configurable
+  local blind_effect_body_part = "bp_eyes"
+  local blind_effect_intensity = 1
+  local is_blind = player:has_effect(blind_effect)
 
   if (is_blind == false) then
   
-    player:add_effect(efftype_id("blind"), 100, "bp_eyes", true, 1)
+    player:add_effect(blind_effect, blind_effect_duration, blind_effect_body_part, true, blind_effect_intensity)
 
   end
 
