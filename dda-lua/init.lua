@@ -1,6 +1,7 @@
 --[[ DEBUG ]]--
 
 DEBUG_ENABLED = false
+SHOW_INTRO_MESSAGE = false
 
 --[[ Unnamed requirements ]]--
 
@@ -39,7 +40,9 @@ local intro_message = {
   "\n",
   "If it is enabled you can check logs in `./dda-lua.log`."
 }
-DISPLAY.popup_table(intro_message) 
+if (SHOW_INTRO_MESSAGE == true or DEBUG_ENABLED == true) then
+  DISPLAY.popup_table(intro_message) 
+end
 
 --[[
 
